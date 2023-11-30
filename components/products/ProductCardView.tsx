@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import styles from './productCardView.style'
-import Ionicons  from 'react-native-ionicons'
+import Ionicons  from 'react-native-vector-icons/Ionicons'
 import { COLORS } from '../../constants'
 import { useNavigation } from '@react-navigation/native'
 import ProductDetails from '../../screens/ProductDetails'

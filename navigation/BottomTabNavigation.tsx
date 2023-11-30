@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import Home from "../screens/Home";
 import Search from "../screens/Search";
 import Profile from "../screens/Profile";
-import Ionicons from "react-native-ionicons";
+import Ionicons from "react-native-vector-icons/Ionicons"
 import {COLORS} from "../constants/index"
 
 const Tab = createBottomTabNavigator()

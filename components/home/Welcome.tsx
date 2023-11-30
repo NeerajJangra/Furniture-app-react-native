@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import React from "react";
 import styles from "./welcome.style"
 import { COLORS, SIZES } from "../../constants";
-import  Ionicons from "react-native-ionicons";
+import  Ionicons from "react-native-vector-icons/Ionicons";
 import Feather from "react-native-vector-icons/Feather"
 // import { TextInput } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
