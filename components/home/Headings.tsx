@@ -3,7 +3,6 @@ import React from 'react'
 import styles from './headings.style'
 import Ionicons  from 'react-native-vector-icons/Ionicons'
 import { COLORS } from '../../constants'
-import { Navigation } from 'react-native-feather'
 import { useNavigation } from '@react-navigation/native'
 
 const Headings = () => {
