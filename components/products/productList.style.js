@@ -1,6 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
+import {StyleSheet} from 'react-native';
+import {SIZES} from '../../constants';
 
 const styles = StyleSheet.create({
-    
-})
-export default styles
+  container: {
+    alignItems: 'center',
+    paddingTop: SIZES.xxLarge,
+    paddingLeft: SIZES.small / 2,
+  },
+  seperator: {
+    height: 16,
+  },
+});
+export default styles;
