@@ -12,7 +12,6 @@ const useFetch = () => {
     try {
       console.log('try');
       const response = await axios.get('http://localhost:3000/api/products/');
-      console.log('response', response);
       setData(response.data);
       setIsLoading(false);
     } catch (error) {

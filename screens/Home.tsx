@@ -17,7 +17,6 @@ import { PERMISSIONS, RESULTS } from 'react-native-permissions'
 const Home = () => {
   const locationHandling = async() => {
     const result = await Utils.checkForPermission(PERMISSIONS.ANDROID.ACCESS_BACKGROUND_LOCATION)
-    console.log(result)
     result == RESULTS.GRANTED ? getLocation : Utils.askForPermission(PERMISSIONS.ANDROID.ACCESS_BACKGROUND_LOCATION) 
   }
 
