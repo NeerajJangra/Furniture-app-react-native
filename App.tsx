@@ -7,6 +7,7 @@ import SplashScreen from 'react-native-splash-screen';
 import {useEffect, useRef, useState} from 'react';
 import {View} from 'react-native';
 import LottieView from 'lottie-react-native';
+import NewRivals from './screens/NewRivals';
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +59,11 @@ export default function App() {
           <Stack.Screen
             name="ProductDetails"
             component={ProductDetails}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="ProductList"
+            component={NewRivals}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
