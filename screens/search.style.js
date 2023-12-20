@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
     searchInput:{
         width: "100%",
         height: "100%",
-        paddingHorizontal: SIZES.small
+        paddingHorizontal: SIZES.small,
+        fontFamily: 'Poppins-Regular'
     },
     searchBtn:{
         backgroundColor: COLORS.primary,

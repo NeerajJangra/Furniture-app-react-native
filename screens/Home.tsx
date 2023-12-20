@@ -29,7 +29,7 @@ const Home = () => {
       <View style = {styles.appBarWrapper}>
         <View style = {styles.appBar}>
           <Pressable onPress={()=> locationHandling()}>
-            <Ionicons name='location-outline' size={SIZES.xLarge} />
+            <Ionicons name='location-outline' color={"black"} size={SIZES.xLarge} />
           </Pressable>
           <Text style={styles.location}>New Delhi, India</Text>
           <View style={{alignItems: "flex-end"}}>
@@ -37,7 +37,7 @@ const Home = () => {
               <Text style={styles.cartNumber}>8</Text>
             </View>
             <TouchableOpacity onPress={()=>console.log('pressed')}>
-              <Fontisto name='shopping-bag' size={24}/>
+              <Fontisto name='shopping-bag' size={24} color={"black"}/>
             </TouchableOpacity>
           </View>
         </View>

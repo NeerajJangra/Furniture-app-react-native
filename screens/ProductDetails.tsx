@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity,ScrollView, FlatList, Image, SafeAreaView } from "react-native";
+import { View, Text, TouchableOpacity,ScrollView, FlatList, Image, SafeAreaView, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from "react";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -6,17 +6,14 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 import { COLORS, SIZES } from "../constants";
 import styles from "./productDetails.style";
-import { useNavigation } from "@react-navigation/native";
-import Home from "./Home";
-import ProductCardView from "../components/products/ProductCardView";
-// import { ScrollView } from "react-native-gesture-handler";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-const ProductDetails = () => {
+const ProductDetails = ({navigation}) => {
+  const {height, width} = useWindowDimensions()
   const [quantity, setQuantity] = useState(1);
-
-  useEffect(() => {
-    console.log("Product Details page opened!");
-  }, []);
+  const route = useRoute();
+  const {item} = route.params;
+  console.log(item)
 
   const incrementQuantity = () => {
     setQuantity(quantity + 1);
@@ -26,18 +23,17 @@ const ProductDetails = () => {
     setQuantity(quantity - 1);
   };
 
-  const navigation = useNavigation();
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{overflow: 'hidden'}}>
       <View style={styles.upperRow}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="chevron-back-circle" size={30} />
+          <Ionicons name="chevron-back-circle" size={30} color={'black'} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={()=>{}}>
           <Ionicons name="heart" color={COLORS.primary} size={30} />
         </TouchableOpacity>
       </View>
-    <ScrollView style={styles.container}>
+    <ScrollView style={[styles.container, {height: height, width: width}]}>
       {/* <View style={styles.upperRow}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="chevron-back-circle" size={30} />
@@ -46,18 +42,17 @@ const ProductDetails = () => {
           <Ionicons name="heart" color={COLORS.primary} size={30} />
         </TouchableOpacity>
       </View> */}
+      <View style={{height:height/2, width: width}}>
       <Image
-        source={{
-          uri: "https://deadsounds.com/image/2340/t"
-          // uri: "https://plus.unsplash.com/premium_photo-1666900440561-94dcb6865554?auto=format&fit=crop&q=60&w=900&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tfGVufDB8fDB8fHww",
-        }}
+        source={{uri: item.imageUrl}}
         style={styles.image}
       />
+      </View>
       <View style={styles.details}>
         <View style={styles.titleRow}>
-          <Text style={styles.title}>Product</Text>
+          <Text style={styles.title}>{item.title}</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>Rs. 460 </Text>
+            <Text style={styles.price}> ${item.price} </Text>
           </View>
         </View>
 
@@ -82,27 +77,18 @@ const ProductDetails = () => {
         <View style={styles.descriptionWrapper}>
           <Text style={styles.description}>Description</Text>
           <Text style={styles.descText}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-            nobis aut numquam fugiat rem adipisci cupiditate, placeat suscipit
-            vel eaque culpa perferendis voluptates officiis quo id recusandae
-            corporis voluptate debitis dolorum sapiente eligendi iusto at ipsum?
-            Dolor animi hic natus consequatur fugit soluta vero nulla
-            perferendis, adipisci voluptatum nam doloremque impedit quibusdam
-            praesentium quod quo, modi deleniti assumenda. Ab, cupiditate eum
-            facere aperiam inventore quibusdam enim nesciunt consequuntur
-            obcaecati distinctio officia assumenda corporis sit repudiandae,
-            natus totam necessitatibus dolores. 
+            {item.description}
           </Text>
         </View>
 
         <View style={styles.locationWrapper}>
           <View style={styles.location}>
-            <Ionicons name="location-outline" size={20} />
-            <Text style={{fontSize: SIZES.medium}}>  Dallas</Text>
+            <Ionicons name="location-outline" size={20} color={'black'} />
+            <Text style={{fontSize: SIZES.medium, color: COLORS.black, fontFamily: 'Poppins-SemiBold'}}>{item.product_location}</Text>
           </View>
           <View style={{flexDirection: "row"}}>
-              <MaterialCommunityIcons name="truck-delivery-outline" size={20} />
-              <Text style={{fontSize: SIZES.medium}}>  Free Delivery</Text>
+              <MaterialCommunityIcons name="truck-delivery-outline" size={20} color={'black'}/>
+              <Text style={{fontSize: SIZES.medium, color: COLORS.black, fontFamily: 'Poppins-SemiBold'}}>  Free Delivery</Text>
           </View>
         </View>
 

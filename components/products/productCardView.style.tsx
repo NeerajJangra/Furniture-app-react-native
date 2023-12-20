@@ -19,26 +19,28 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.green
     },
     image: {
-        aspectRatio: 1,
-        resizeMode: "cover",
+        // aspectRatio: 1,
+            resizeMode: "cover",
+        height: '100%',
+        width: '100%'
+        
     },
     details: {
         padding: SIZES.small,
     },
     title:{
-        // fontFamily: "bold",
+        fontFamily: "Poppins-Bold",
         fontSize: SIZES.large,
 
         marginBottom: 1
     },
     supplier: {
-        // fontFamily: "bold",
+        fontFamily: "Poppins-Bold",
         fontSize: SIZES.medium,
         color: COLORS.gray
     },
     price:{
-        // fontFamily:"bold",
-
+        fontFamily:"Poppins-Bold",
         fontSize: SIZES.medium
     },
     addBtn: {

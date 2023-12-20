@@ -3,10 +3,11 @@ import { COLORS, SIZES } from "../../constants/index";
 
 const styles = StyleSheet.create({
     container: {
-        width: "100%"
+        width: "100%",
     },
     welcomeText :(color = COLORS.black)=> ({
-        fontSize: SIZES.xxLarge -5,
+        fontSize: SIZES.xLarge + 5,
+        fontFamily: 'Poppins-Bold',
         color: color,
         marginHorizontal: 12,
     }),
@@ -31,6 +32,7 @@ const styles = StyleSheet.create({
         borderRadius: SIZES.small,
     },
     searchInput:{
+        fontFamily: 'Poppins-Regular',
         width: "100%",
         height: "100%",
         paddingHorizontal: SIZES.small

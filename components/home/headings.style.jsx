@@ -12,6 +12,8 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     headerTitle:{
+        fontFamily: 'Poppins-SemiBold',
+        color: 'black',
         fontSize: SIZES.xLarge - 2,
         
     }

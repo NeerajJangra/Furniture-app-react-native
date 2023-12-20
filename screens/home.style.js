@@ -3,7 +3,7 @@ import {COLORS, SIZES} from "../constants/index"
 
 const styles = StyleSheet.create({
     textStyle: {
-        // fontFamily: 'Poppins-Bold',
+        fontFamily: 'Poppins-Bold',
         fontSize: 40,
     },
     appBarWrapper: {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     location:{
-        // fontFamily: "Poppins-Regular",
+        fontFamily: "Poppins-SemiBold",
         fontSize : SIZES.medium,
         color: COLORS.gray
     },

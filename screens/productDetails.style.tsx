@@ -1,9 +1,10 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, useWindowDimensions } from "react-native";
 import { COLORS, SIZES } from "../constants";
+
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SIZES.large,
+    // marginTop: SIZES.large,
     // padding:6,
     // backgroundColor: "green",
     // height: "100%"
@@ -14,13 +15,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     position: "absolute",
-    top: SIZES.xLarge+10,
+    top: SIZES.xLarge,
     width: SIZES.width - 44,
     marginHorizontal: 20,
   },
   image: {
-    aspectRatio: 1,
+    // aspectRatio: 1,
     resizeMode: "cover",
+    height: '100%',
+    width: '100%',
     backgroundColor: "green",
   },
   details: {
@@ -53,7 +56,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: SIZES.large,
-    
+    fontFamily: 'Poppins-Bold',
+    color: 'black'
   },
   priceWrapper: {
     borderRadius: SIZES.large,
@@ -62,7 +66,8 @@ const styles = StyleSheet.create({
   price: {
     paddingHorizontal: 10,
     fontSize: SIZES.large,
-
+    fontFamily: 'Poppins-SemiBold',
+    color: 'black'
   },
   ratingRow: {
     // paddingBottom: SIZES.small,
@@ -83,6 +88,7 @@ const styles = StyleSheet.create({
     fontSize: SIZES.medium,
     color: COLORS.gray,
     paddingHorizontal: SIZES.small,
+    fontFamily:'Poppins-Medium'
   },
   descriptionWrapper: {
     // height: "100%",
@@ -91,11 +97,16 @@ const styles = StyleSheet.create({
     paddingBottom: SIZES.medium,
   },
   description: {
-    fontSize: SIZES.large,
+    fontSize: SIZES.large - 2,
+    fontFamily:'Poppins-Medium',
+    color: 'black'
 
   },
   descText: {
+    fontFamily: 'Poppins-Regular',
     textAlign: "justify",
+    marginBottom: SIZES.small,
+    fontSize: SIZES.small
   },
   locationWrapper: {
     flexDirection: "row",
@@ -109,6 +120,7 @@ const styles = StyleSheet.create({
   location: {
     flexDirection: "row",
     justifyContent: "space-between",
+    
   },
   cartRow: {
     flexDirection: "row",
@@ -125,16 +137,15 @@ const styles = StyleSheet.create({
 
   cartBtn: {
     backgroundColor: "black",
-    padding:10,
+    padding: 10,
     // paddingHorizontal: 100,
-    paddingEnd:150,
-    borderRadius: SIZES.large
-    
+    paddingEnd: 150,
+    borderRadius: SIZES.large 
   },
   cartText: {
     color: COLORS.lightWhite,
     fontSize: SIZES.medium,
-
+    fontFamily: 'Poppins-SemiBold'
   },
 });
 
